@@ -1,0 +1,22 @@
+- ¿ *str == '%' ?
+	- NO
+		- ft_putchar(*str)
+		- ret++
+		- str++
+	- SI
+		- str++
+		- int flags_nbr = 0
+		- ... while *str == flag
+			- str++
+			- flags_nbr++
+		- ¿ *str == formatter ?
+			- SI
+				- ¿ compatible_flag (formatter, *str, flags_nbr) ?
+					- SI
+						- ret += choose_printer(*str, flags_nbr, va_arg)
+					- NO
+						- ft_pustr_fd("formatter incorrecto", 2)
+						- return (NULL)
+			- NO
+				- ft_putstr_fd("formatter incorrecto", 2)
+				- return (NULL)
