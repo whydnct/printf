@@ -29,6 +29,8 @@ int	choose_printer(char *str, int flags_nbr, void *arg)
 		return (ft_strlen((char *arg)));
 	}
 	if (formatter == 'p')
+		return (print_memory (arg, 1, 1));
+	if (formatter == 'i' || formatter == 'd')
 	{
 		print_memory (arg);
 		return (14);
@@ -42,7 +44,8 @@ int	choose_printer(char *str, int flags_nbr, void *arg)
 		ft_putnbr(*((int *)arg));
 		return (int_lenght(*(int *)arg));
 	}
-	if (formatter == 'u')
 	if (formatter == 'x')
+		return (print_memory (arg, 1, 0));
 	if (formatter == 'X')
+		return (print_memory (arg, 0, 0));
 }
