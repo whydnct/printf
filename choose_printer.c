@@ -6,15 +6,15 @@
 /*   By: aperez-m <aperez-m@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/11 19:20:54 by aperez-m          #+#    #+#             */
-/*   Updated: 2022/12/11 20:56:32 by aperez-m         ###   ########.fr       */
+/*   Updated: 2022/12/12 20:56:17 by aperez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libprintf"
+#include "libprintf.h"
 
 int	choose_printer(char *str, int flags_nbr, void *arg)
 {
-	char	form;
+	char	formatter;
 	char	*form_lst;
 
 	formatter = *(str - flags_nbr);
@@ -32,17 +32,13 @@ int	choose_printer(char *str, int flags_nbr, void *arg)
 		return (print_memory (arg, 1, 1));
 	if (formatter == 'i' || formatter == 'd')
 	{
-		print_memory (arg);
-		return (14);
+		ft_putstr(1, itoa(*((int *)arg)));
+		return (ft_strlength(itoa(*(int *)arg);
 	}
-	if (formatter == 'd')
+	if (formatter == 'u')
 	{
-		retunr ()
-	}
-	if (formatter == 'i')
-	{
-		ft_putnbr(*((int *)arg));
-		return (int_lenght(*(int *)arg));
+		ft_pustr(itoa(*())ft_putnbr(*(int *) + 1 + 4294967295);
+		return(int_length(*(int *) + 1))
 	}
 	if (formatter == 'x')
 		return (print_memory (arg, 1, 0));
