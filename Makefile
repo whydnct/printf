@@ -6,7 +6,7 @@
 #    By: aperez-m <aperez-m@student.42urduliz.com>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/02 13:31:05 by aperez-m          #+#    #+#              #
-#    Updated: 2022/12/12 14:20:15 by aperez-m         ###   ########.fr        #
+#    Updated: 2022/12/12 20:25:26 by aperez-m         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,11 +17,11 @@ CC = gcc
 
 FLAGS = -Wall -Wextra -Werror
 
-NAME = libprintf.a
+NAME = libprintf
 
 # Sources
 
-SRC = 
+SRC = $(wildcard libft/*.c) $(wildcard *.c)
 
 OBJ = $(SRC:.c=.o) 
 
@@ -30,8 +30,9 @@ OBJ = $(SRC:.c=.o)
 all: $(NAME)
 
 $(NAME): 
-	@$(CC) $(FLAGS) -c $(SRC) 
-	@ar -rcs $(NAME) $(OBJ) 
+	@$(CC) $(FLAGS) $(SRC) -o $(NAME)
+#	@$(CC) $(FLAGS) -c $(SRC) 
+#	@ar -rcs $(NAME) $(OBJ) 
 
 clean:
 	@rm -f $(OBJ)
