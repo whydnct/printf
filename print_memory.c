@@ -6,7 +6,7 @@
 /*   By: aperez-m <aperez-m@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 14:45:40 by aperez-m          #+#    #+#             */
-/*   Updated: 2022/12/12 20:59:51 by aperez-m         ###   ########.fr       */
+/*   Updated: 2022/12/12 22:58:17 by aperez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ int	print_memory(void *arg, int lower, int prefix)
 		nbr /= 16;
 		i--;
 	}
-	nbr_str[i] = to_hex((int)(nbr % 16));
+	nbr_str[i] = to_hex((int)(nbr % 16), lower);
 	i--;
 	if (prefix == 1)
 		ft_putstr_fd("0x", 1);
