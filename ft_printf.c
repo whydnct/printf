@@ -6,7 +6,7 @@
 /*   By: aperez-m <aperez-m@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/11 08:50:49 by aperez-m          #+#    #+#             */
-/*   Updated: 2022/12/11 21:07:23 by aperez-m         ###   ########.fr       */
+/*   Updated: 2022/12/12 20:57:24 by aperez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,21 +33,22 @@ int	ft_printf(char const *str, ...)
 		{
 			str++;
 			flags_nbr = 0;
-			while (is_flag(str*))
+			while (is_flag(*str))
 			{
 				str++;
 				flags_nbr++;
 			}
-			if (is_formatter(str*))
+			if (is_formatter(*str))
 			{
 				if (flags_compatible(str, flags_nbr))
-					ret += choose_printer(str, flags_nbr, va_arg);
+					ret += choose_printer(str, flags_nbr, va_arg[ap, type]);
 				else
 					return (abort_execution());
 			}
 			else
 				return (abort_execution());
-		str++; 
+		str++;
+		}
 	}
-	return (ret)
+	return (ret);
 }

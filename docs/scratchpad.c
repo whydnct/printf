@@ -4,6 +4,11 @@
 #include <unistd.h>
 #include <stdio.h>
 
+void	ft_putchar_fd(char c, int fd)
+{
+	write(fd, &c, 1);
+}
+
 size_t	ft_strlen(const char *str)
 {
 	size_t	i;
@@ -22,18 +27,16 @@ void	ft_putstr_fd(char *s, int fd)
 int main (int argc, char **argv)
 {
 	(void)argc;
-	char 	c;
-	void	*ptr;
-	
-	ptr = 10;
-	c = '\n';
-	char *str = argv[1];
-	char *str2 = "na\nda";
-	ft_putstr_fd(str, 1);
-	write(1, &c, 1);
-	ft_putstr_fd(str2, 1);
-	write(1, &c, 1);
-	printf("%p\n", ptr);
-	ptr = &c;
-	printf("%p\n", ptr);
+	(void)argv;
+	int nbr;
+	unsigned int nbr2;
+	unsigned int nbr3;
+
+	nbr = -1;
+	nbr2 = (unsigned int)nbr;
+	nbr3 = -13;
+	printf("%X\n", nbr3);
+	printf("%p\n", &nbr3);
+	printf("%d\n", nbr2);
+	printf("%d\n", nbr3);
 }
