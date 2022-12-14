@@ -3,45 +3,38 @@
 /*                                                        :::      ::::::::   */
 /*   choose_printer.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aperez-m <aperez-m@student.42urduliz.com>  +#+  +:+       +#+        */
+/*   By: aperez-m <aperez-m@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/11 19:20:54 by aperez-m          #+#    #+#             */
-/*   Updated: 2022/12/12 20:56:17 by aperez-m         ###   ########.fr       */
+/*   Updated: 2022/12/14 19:58:44 by aperez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libprintf.h"
 
-int	choose_printer(char *str, int flags_nbr, void *arg)
+int	choose_printer(char *str, va_list ap)
 {
-	char	formatter;
-	char	*form_lst;
+	char	*string;
 
-	formatter = *(str - flags_nbr);
-	if (formatter == 'c')
+	if (*str == 'c')
 	{
-		ft_putchar_fd(*((char *)arg), 1);
+		ft_putchar_fd(1, va_arg(ap, char));
 		return (1);
 	}
-	if (formatter == 's')
+	if (*str == 's')
 	{
-		ft_putstr_fd((char *)arg, 1);
-		return (ft_strlen((char *arg)));
+		string = va_arg(ap, char *);
+		ft_putstr_fd(string, 1);
+		return (ft_strlen(string));
 	}
-	if (formatter == 'p')
-		return (print_memory (arg, 1, 1));
-	if (formatter == 'i' || formatter == 'd')
-	{
-		ft_putstr(1, itoa(*((int *)arg)));
-		return (ft_strlength(itoa(*(int *)arg);
-	}
-	if (formatter == 'u')
-	{
-		ft_pustr(itoa(*())ft_putnbr(*(int *) + 1 + 4294967295);
-		return(int_length(*(int *) + 1))
-	}
-	if (formatter == 'x')
-		return (print_memory (arg, 1, 0));
-	if (formatter == 'X')
-		return (print_memory (arg, 0, 0));
+	if (*str == 'p')
+		return (print_memory(va_arg(ap, long), 1, 1));
+	if (*str == 'i' || *str == 'd')
+		return (print_int(va_arg(ap, int)));
+	if (*str == 'u')
+		return (print_unsiged(va_arg(ap, unsigned int)));
+	if (*str == 'x')
+		return (print_memory(va_arg(ap, long), 1, 0));
+	if (*str == 'X')
+		return (print_memory(va_arg(ap, long), 0, 0));
 }
