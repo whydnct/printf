@@ -1,41 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   to_hex.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aperez-m <aperez-m@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/11 08:50:49 by aperez-m          #+#    #+#             */
-/*   Updated: 2022/12/14 20:01:06 by aperez-m         ###   ########.fr       */
+/*   Created: 2022/12/14 20:19:27 by aperez-m          #+#    #+#             */
+/*   Updated: 2022/12/14 20:36:47 by aperez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libprintf.h"
 
-int	ft_printf(char const *str, ...)
+static	char	to_hex(unsigned long nbr, int lowcase)
 {
-	va_list	ap;
-	int		ret;
-
-	if (!str)
-		return (0);
-	va_start(ap, str);
-	while (*str)
-	{
-		if (*str != '%')
-		{
-			ft_putchar_fd(str, 1);
-			ret++;
-			str++;
-		}
-		else
-		{
-			str++;
-			if (is_formatter(*str))
-				ret += choose_printer(str, ap);
-			else
-				return (abort_execution());
-		}
-	}
-	return (ret);
+	if (nbr < 10)
+		return (nbr + '0');
+	else
+		return (nbr - 10 + 'A' + lowcase * ('a' - 'A'));
 }
