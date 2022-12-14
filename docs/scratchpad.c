@@ -1,4 +1,4 @@
-// [?] Cómo conseguir que imprima caracteres especiales pasados por consola.
+// TODO Cómo conseguir que imprima caracteres especiales pasados por consola.
 
 #include <stdlib.h>
 #include <unistd.h>
@@ -29,13 +29,14 @@ int main (int argc, char **argv)
 	(void)argc;
 	(void)argv;
 	int nbr;
+	char	*a = "ca\na";
 	unsigned int nbr2;
 	unsigned int nbr3;
 
 	nbr = -1;
 	nbr2 = (unsigned int)nbr;
 	nbr3 = -13;
-	printf("%X\n", nbr3);
+	printf("%s\n", a);
 	printf("%p\n", &nbr3);
 	printf("%d\n", nbr2);
 	printf("%d\n", nbr3);
