@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   choose_printer.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aperez-m <aperez-m@student.42urduliz.co    +#+  +:+       +#+        */
+/*   By: aperez-m <aperez-m@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/11 19:20:54 by aperez-m          #+#    #+#             */
-/*   Updated: 2022/12/14 20:35:56 by aperez-m         ###   ########.fr       */
+/*   Updated: 2022/12/15 16:42:01 by aperez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,8 @@ int	choose_printer(char *str, va_list ap)
 		return (print_hex_long(va_arg(ap, unsigned long), 1, 1));
 	if (*str == 'i' || *str == 'd')
 		return (print_int(va_arg(ap, int)));
-	if (*str == 'u')
-		return (print_unsigned(va_arg(ap, unsigned int)));
-	if (*str == 'x')
-		return (print_hex_long(va_arg(ap, unsigned long), 1, 0));
-	if (*str == 'X')
-		return (print_hex_long(va_arg(ap, unsigned long), 0, 0));
+	//if (*str == 'u')
+	//	return (print_unsigned(va_arg(ap, unsigned int), *str));
+	if (*str == 'x' || *str == 'X' || *str == 'u')
+		return (print_hex_long(va_arg(ap, unsigned long), *str);
 }
