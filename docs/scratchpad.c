@@ -36,8 +36,6 @@ int main (int argc, char **argv)
 	nbr = -1;
 	nbr2 = (unsigned int)nbr;
 	nbr3 = -13;
-	printf("%s\n", a);
-	printf("%p\n", &nbr3);
-	printf("%d\n", nbr2);
+	printf("%x\n", -6546213);
 	printf("%d\n", nbr3);
 }

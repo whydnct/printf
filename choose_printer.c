@@ -3,22 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   choose_printer.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aperez-m <aperez-m@student.42urduliz.com>  +#+  +:+       +#+        */
+/*   By: aperez-m <aperez-m@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/11 19:20:54 by aperez-m          #+#    #+#             */
-/*   Updated: 2022/12/15 16:42:01 by aperez-m         ###   ########.fr       */
+/*   Updated: 2022/12/17 10:15:16 by aperez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libprintf.h"
 
-int	choose_printer(char *str, va_list ap)
+int	choose_printer(const char *str, va_list ap)
 {
 	char	*string;
 
 	if (*str == 'c')
 	{
-		ft_putchar_fd(1, va_arg(ap, char));
+		ft_putchar_fd(va_arg(ap, char), 1);
 		return (1);
 	}
 	if (*str == 's')
@@ -27,12 +27,9 @@ int	choose_printer(char *str, va_list ap)
 		ft_putstr_fd(string, 1);
 		return (ft_strlen(string));
 	}
-	if (*str == 'p')
-		return (print_hex_long(va_arg(ap, unsigned long), 1, 1));
 	if (*str == 'i' || *str == 'd')
 		return (print_int(va_arg(ap, int)));
-	//if (*str == 'u')
-	//	return (print_unsigned(va_arg(ap, unsigned int), *str));
-	if (*str == 'x' || *str == 'X' || *str == 'u')
-		return (print_hex_long(va_arg(ap, unsigned long), *str);
+	if (*str == 'x' || *str == 'X' || *str == 'u' || *str == 'p')
+		return (print_unsigned(va_arg(ap, unsigned long), *str));
+	return (0);
 }

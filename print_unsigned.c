@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_hex_long.c                                   :+:      :+:    :+:   */
+/*   print_unsigned.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aperez-m <aperez-m@student.42urduliz.com>  +#+  +:+       +#+        */
+/*   By: aperez-m <aperez-m@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 14:45:40 by aperez-m          #+#    #+#             */
-/*   Updated: 2022/12/15 16:47:46 by aperez-m         ###   ########.fr       */
+/*   Updated: 2022/12/17 10:07:34 by aperez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ int	print_unsigned(unsigned long nbr, char c)
 	base_length = 16 - 6 * (int)(c == 'u');
 	nbr_str = malloc(17);
 	if (nbr_str == NULL)
-		return (NULL);
+		return (0);
 	ft_bzero(nbr_str, 17);
 	i = to_hex(nbr, nbr_str, base, base_length);
 	if (c == 'p')
