@@ -47,5 +47,6 @@ int	ft_printf(char const *str, ...)
 				ret += print_char(*str);
 		}
 	}
+	va_end(ap);
 	return (ret);
 }

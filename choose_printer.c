@@ -18,7 +18,7 @@ int	choose_printer(const char *str, va_list ap)
 
 	if (*str == 'c')
 	{
-		ft_putchar_fd(va_arg(ap, char), 1);
+		ft_putchar_fd(va_arg(ap, int), 1);
 		return (1);
 	}
 	if (*str == 's')
