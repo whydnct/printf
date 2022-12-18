@@ -6,11 +6,11 @@
 /*   By: aperez-m <aperez-m@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/14 21:56:19 by aperez-m          #+#    #+#             */
-/*   Updated: 2022/12/14 22:13:53 by aperez-m         ###   ########.fr       */
+/*   Updated: 2022/12/18 09:34:58 by aperez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libprintf.h"
+#include "libftprintf.h"
 
 int	print_int(int nbr)
 {

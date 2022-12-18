@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   choose_printer.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aperez-m <aperez-m@student.42urduliz.co    +#+  +:+       +#+        */
+/*   By: aperez-m <aperez-m@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/11 19:20:54 by aperez-m          #+#    #+#             */
-/*   Updated: 2022/12/17 10:15:16 by aperez-m         ###   ########.fr       */
+/*   Updated: 2022/12/18 09:35:27 by aperez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libprintf.h"
+#include "libftprintf.h"
 
 int	choose_printer(const char *str, va_list ap)
 {
