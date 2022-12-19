@@ -6,7 +6,7 @@
 /*   By: aperez-m <aperez-m@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/17 08:48:45 by aperez-m          #+#    #+#             */
-/*   Updated: 2022/12/19 12:32:45 by aperez-m         ###   ########.fr       */
+/*   Updated: 2022/12/19 14:39:18 by aperez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,5 @@
 
 int	print_char(char c)
 {
-	ft_putchar_fd(c, 1);
-	return (1);
+	return (write(1, &c, 1));
 }
