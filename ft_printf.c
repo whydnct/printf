@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aperez-m <aperez-m@student.42urduliz.com>  +#+  +:+       +#+        */
+/*   By: aperez-m <aperez-m@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/11 08:50:49 by aperez-m          #+#    #+#             */
-/*   Updated: 2022/12/18 09:35:19 by aperez-m         ###   ########.fr       */
+/*   Updated: 2022/12/19 09:17:08 by aperez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ int	is_formatter(char c)
 	{
 		if (*formatters == c)
 			return (1);
+		formatters++;
 	}
 	return (0);
 }
@@ -46,6 +47,7 @@ int	ft_printf(char const *str, ...)
 			else if (*str == '%')
 				ret += print_char(*str);
 		}
+		str++;
 	}
 	va_end(ap);
 	return (ret);
