@@ -6,11 +6,11 @@
 /*   By: aperez-m <aperez-m@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/11 08:50:49 by aperez-m          #+#    #+#             */
-/*   Updated: 2022/12/19 11:16:43 by aperez-m         ###   ########.fr       */
+/*   Updated: 2022/12/19 12:32:31 by aperez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf.h"
 
 int	is_formatter(char c)
 {
