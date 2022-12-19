@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_unsigned.c                                   :+:      :+:    :+:   */
+/*   print_unsigned_long.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aperez-m <aperez-m@student.42urduliz.com>  +#+  +:+       +#+        */
+/*   By: aperez-m <aperez-m@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 14:45:40 by aperez-m          #+#    #+#             */
-/*   Updated: 2022/12/18 09:35:13 by aperez-m         ###   ########.fr       */
+/*   Updated: 2022/12/19 10:12:13 by aperez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int	to_hex(unsigned long nbr, char *nbr_str, char *base, int base_length)
 {
 	int	i;
 
-	i = 15;
+	i = base_length - 1;
 	while (nbr / base_length)
 	{
 		nbr_str[i] = base[nbr % base_length];
@@ -36,10 +36,10 @@ int	print_unsigned(unsigned long nbr, char c)
 	int				base_length;
 
 	if (c != 'X')
-		base = "0123456789ABCDEF";
-	else
 		base = "0123456789abcdef";
-	base_length = 16 - 6 * (int)(c == 'u');
+	else
+		base = "0123456789ABCDEF";
+	base_length = 16 - 6 * ((int)(c == 'u'));
 	nbr_str = malloc(17);
 	if (nbr_str == NULL)
 		return (0);
