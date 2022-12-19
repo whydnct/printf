@@ -6,7 +6,7 @@
 #    By: aperez-m <aperez-m@student.42urduliz.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/02 13:31:05 by aperez-m          #+#    #+#              #
-#    Updated: 2022/12/19 16:15:40 by aperez-m         ###   ########.fr        #
+#    Updated: 2022/12/19 16:40:40 by aperez-m         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,6 @@ LIB_DIR = libft
 
 SRC =	choose_printer.c \
 		ft_printf.c \
-		print_char.c \
 		print_int.c \
 		print_long.c  
 
