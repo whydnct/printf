@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_unsigned_long.c                              :+:      :+:    :+:   */
+/*   print_long.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aperez-m <aperez-m@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 14:45:40 by aperez-m          #+#    #+#             */
-/*   Updated: 2022/12/19 10:12:13 by aperez-m         ###   ########.fr       */
+/*   Updated: 2022/12/19 12:02:57 by aperez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int	to_hex(unsigned long nbr, char *nbr_str, char *base, int base_length)
 	return (i);
 }
 
-int	print_unsigned(unsigned long nbr, char c)
+int	print_long(unsigned long nbr, char c)
 {
 	char			*nbr_str;
 	int				i;

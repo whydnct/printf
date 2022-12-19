@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libftprintf.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aperez-m <aperez-m@student.42urduliz.com>  +#+  +:+       +#+        */
+/*   By: aperez-m <aperez-m@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/11 08:55:06 by aperez-m          #+#    #+#             */
-/*   Updated: 2022/12/18 09:36:40 by aperez-m         ###   ########.fr       */
+/*   Updated: 2022/12/19 12:02:37 by aperez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,5 +21,5 @@ int	choose_printer(const char *str, va_list ap);
 int	ft_printf(char const *str, ...);
 int	print_char(char c);
 int	print_int(int nbr);
-int	print_unsigned(unsigned long ul, char c);
+int	print_long(unsigned long ul, char c);
 #endif
